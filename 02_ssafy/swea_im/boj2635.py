@@ -19,3 +19,19 @@
 
 num = int(input())
 
+result = []
+
+for i in range(num//2, num+1):
+    cnt = 0
+    tmp = [num, i]
+    while 1:
+        tmp.append(tmp[-2] - tmp[-1])
+        if tmp[-1] < 0:
+            tmp.pop()
+            break
+    
+    if len(tmp) > len(result):
+        result = tmp[:]
+
+print(len(result))
+print(f"{' '.join(map(str,result))}")
