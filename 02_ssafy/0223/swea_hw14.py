@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input.txt', 'r')
+sys.stdin = open('../0222/input.txt', 'r')
 
 
 def inorder(t):
