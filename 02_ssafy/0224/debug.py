@@ -1,4 +1,3 @@
-# debug 검사용
 import sys
 sys.stdin = open('input.txt','r')
 
@@ -20,8 +19,8 @@ def check(sx, sy):
         y = sy
         while True:
 
-            nx = sx + dx[direction]
-            ny = sy + dy[direction]
+            nx = x + dx[direction]
+            ny = y + dy[direction]
 
             if 0 <= nx < N and 0 <= ny < N:
 
@@ -58,18 +57,12 @@ def check(sx, sy):
                 elif map_list[nx][ny] == -1:
                     break
 
-                # nx = x + dx[direction]
-                # ny = y + dy[direction]
-
-                # x, y = nx, ny
+                x, y = nx, ny
 
             else:
                 cnt += 1
-                # nx = x + dx[block[5][direction]]
-                # ny = y + dy[block[5][direction]]
                 direction = block[5][direction]
-
-            x, y = nx, ny
+                x, y = nx, ny
 
 
         if cnt > max_v:
