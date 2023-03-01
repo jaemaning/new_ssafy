@@ -89,8 +89,6 @@ T = int(input())
 
 for tc in range(1, T + 1):
     n, m = map(int, input().split())
-    spw = set()
-    pw = ""
     box = set(input().strip()[:m] for _ in range(n))
 
     rlt = pw_solve(box)
