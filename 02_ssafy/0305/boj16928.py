@@ -24,12 +24,15 @@ def bfs(start):
             n_idx = q.popleft()
             if n_idx == 100:
                 return cnt
+            
+            next = adj_list[n_idx]
+            while len(next) != 6:
+                next = adj_list[next[0]]
 
-            next = check_dfs(n_idx)
-
-            for i in adj_list[next]:
+            for i in next:
                 q.append(i)
 
+        q = deque(set(q))
 
 # 사다리의수(n) 뱀의 수(m)
 n, m = map(int, input().split())
