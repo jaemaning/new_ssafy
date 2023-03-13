@@ -1,5 +1,10 @@
 # 창용 마을 무리의 개수
 
+import sys
+sys.stdin = open('input.txt', 'r')
+
+
+# 인풋값 받기
 T = int(input())
 
 for tc in range(1, T + 1):
@@ -16,6 +21,8 @@ for tc in range(1, T + 1):
         adj_list[start].append(end)
         adj_list[end].append(start)
 
+    print(adj_list)
+
     for i in range(1, n+1):
         if visited[i] == 0:
             cnt += 1
@@ -25,7 +32,6 @@ for tc in range(1, T + 1):
                 if visited[x] == 0:
                     visited[x] = 1
                     for j in adj_list[x]:
-                        print(visited)
                         stk.append(j)
 
     print(cnt)
